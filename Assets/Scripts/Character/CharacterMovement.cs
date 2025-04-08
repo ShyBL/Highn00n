@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float speed;
-    public Vector2 dir = Vector2.zero;
-    private Rigidbody2D rb;
+    [SerializeField] private float speed;
+    [HideInInspector] public Vector2 dir = Vector2.zero;
+    private Rigidbody2D _rb;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -25,6 +25,6 @@ public class CharacterMovement : MonoBehaviour
             dir.y = -1;
 
         dir.Normalize();
-        rb.velocity = speed * dir;
+        _rb.velocity = speed * dir;
     }
 }

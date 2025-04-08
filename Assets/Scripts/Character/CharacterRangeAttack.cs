@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 public class CharacterRangeAttack : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public List<Transform> firePoints; // A list of fire points for each direction
-    private CharacterAnimation characterAnimation;
-    public float bulletSpeed = 10f;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private List<Transform> firePoints; // A list of fire points for each direction
+    [SerializeField] private float bulletSpeed = 10f;
+    
+    private CharacterAnimation _characterAnimation;
     private void Start()
     {
-        characterAnimation = GetComponent<CharacterAnimation>();
+        _characterAnimation = GetComponent<CharacterAnimation>();
     }
 
     private void Update()
@@ -22,7 +23,7 @@ public class CharacterRangeAttack : MonoBehaviour
 
     private void Shoot()
     {
-        int direction = characterAnimation.GetFacingDirection();
+        int direction = _characterAnimation.GetFacingDirection();
         
         // Ensure direction is within bounds
         if (direction >= 0 && direction < firePoints.Count)
@@ -32,7 +33,6 @@ public class CharacterRangeAttack : MonoBehaviour
             if (thing.TryGetComponent(out Rigidbody2D rb))
             {
                 rb.velocity = selectedFirePoint.right * bulletSpeed;
-                //rb.AddForce(Vector2.up,ForceMode2D.Impulse);
             }
             
         }
