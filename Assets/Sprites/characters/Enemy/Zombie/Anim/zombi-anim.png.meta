@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 30798fb50e6aea144bd4a52f29711fd9
+guid: e2d5b587e0f00e14c84a72bbd24fc89a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door-without-lock_0
+      name: zombi-anim_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 32
-        height: 32
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fa6645da72ca4845879af542838e234
-      internalID: -358229244
+      spriteID: 8f9a375d4145c1d4e82872436329bbf0
+      internalID: -1927830436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door-without-lock_1
+      name: zombi-anim_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 35
         y: 0
-        width: 32
-        height: 32
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c86d3d77d345e564982f47eef67219cc
-      internalID: -909049541
+      spriteID: 51b7c89b8fb179344b2962945ec3d287
+      internalID: -1743456632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door-without-lock_2
+      name: zombi-anim_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 68
         y: 0
-        width: 32
-        height: 32
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97f83fe0b8635a343ad3b59cddb8cb63
-      internalID: 2129112620
+      spriteID: 3e82a3e5935a4f243b4e71314f6edd07
+      internalID: -934750491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door-without-lock_3
+      name: zombi-anim_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 101
         y: 0
-        width: 32
-        height: 32
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +213,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 652907589fb3fb746934762b0fa842e6
-      internalID: -518299399
+      spriteID: 0c1017ea35377c14b983b92010163aeb
+      internalID: -1215352195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombi-anim_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c127e0a768fe046459e39eccb389f773
+      internalID: 349162160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombi-anim_5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 0
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d14e6063a308f42bd13981559f9161
+      internalID: 1344344548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombi-anim_6
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c2a1a170d4d034ab031394a07391a6
+      internalID: 484616646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombi-anim_7
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 0
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f10e67e70c5d241acf2f6cf518ace4
+      internalID: 496086337
       vertices: []
       indices: 
       edges: []
@@ -230,10 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      door-without-lock_0: -358229244
-      door-without-lock_1: -909049541
-      door-without-lock_2: 2129112620
-      door-without-lock_3: -518299399
+      zombi-anim_0: -1927830436
+      zombi-anim_1: -1743456632
+      zombi-anim_2: -934750491
+      zombi-anim_3: -1215352195
+      zombi-anim_4: 349162160
+      zombi-anim_5: 1344344548
+      zombi-anim_6: 484616646
+      zombi-anim_7: 496086337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

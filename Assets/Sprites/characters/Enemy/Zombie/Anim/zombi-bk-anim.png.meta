@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 164f427778d3a6c42802b0db7f058076
+guid: 1d06e4d787a9f3f4f9ef99b3a51522c1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dynamite-pack_0
+      name: zombi-bk-anim_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 67
-        width: 20
-        height: 26
+        x: 1
+        y: 0
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5673c8d10e22e25419fe423ca3ae7abd
-      internalID: -1617429866
+      spriteID: 9d4e26bca3c6bc04ba1dcf5c4e4e9503
+      internalID: 1619713116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dynamite-pack_1
+      name: zombi-bk-anim_1
       rect:
         serializedVersion: 2
-        x: 39
-        y: 68
-        width: 18
-        height: 24
+        x: 31
+        y: 0
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1072f9ebf79753c40a94524e10fa6cb3
-      internalID: 997198051
+      spriteID: 7722fffe9ce48084791670c48a0aa974
+      internalID: 1489638465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dynamite-pack_2
+      name: zombi-bk-anim_2
       rect:
         serializedVersion: 2
-        x: 71
-        y: 67
-        width: 18
-        height: 26
+        x: 61
+        y: 0
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9f96c789ec0be743a830f431df6a499
-      internalID: -908952664
+      spriteID: 66cbcebac39a3914ebf92b06fef6af37
+      internalID: -887270229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dynamite-pack_3
+      name: zombi-bk-anim_3
       rect:
         serializedVersion: 2
-        x: 8
-        y: 34
-        width: 16
-        height: 28
+        x: 91
+        y: 0
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2339ba12ddc0a724787e93e5f19af9b4
-      internalID: -937691805
+      spriteID: 15b63d4d0d868a44c998e50f37904ae1
+      internalID: 2037333122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dynamite-pack_4
+      name: zombi-bk-anim_4
       rect:
         serializedVersion: 2
-        x: 39
-        y: 35
-        width: 18
-        height: 26
+        x: 121
+        y: 0
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0efc3d225f9e6e54980a8e6f6c15ee01
-      internalID: 316245118
+      spriteID: 541092e604bdffd4086d4121646c3ad0
+      internalID: 1752602159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dynamite-pack_5
+      name: zombi-bk-anim_5
       rect:
         serializedVersion: 2
-        x: 71
-        y: 36
-        width: 18
-        height: 24
+        x: 151
+        y: 0
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36e44c2509ded3e48b929b5da92acac1
-      internalID: -150903827
+      spriteID: 920057016de8d2f40bd8a08daf7d6a06
+      internalID: 1818332177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dynamite-pack_6
+      name: zombi-bk-anim_6
       rect:
         serializedVersion: 2
-        x: 7
-        y: 5
-        width: 18
-        height: 22
+        x: 181
+        y: 0
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +276,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38c9719c50d9ca746bd6fd191183a6e6
-      internalID: -1440568947
+      spriteID: 392b19434b571f14e859269630272546
+      internalID: 845076182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dynamite-pack_7
+      name: zombi-bk-anim_7
       rect:
         serializedVersion: 2
-        x: 38
-        y: 6
-        width: 20
-        height: 20
+        x: 211
+        y: 0
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,29 +297,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4325d9da19dc4f541922b7e41aad0feb
-      internalID: 305754497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dynamite-pack_8
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 5
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b281a54b55ea4d4cb0e87de1209d16c
-      internalID: -50081049
+      spriteID: e49dffbf68233004fa1d8d5fbf44c0a1
+      internalID: -837297688
       vertices: []
       indices: 
       edges: []
@@ -335,15 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dynamite-pack_0: -1617429866
-      dynamite-pack_1: 997198051
-      dynamite-pack_2: -908952664
-      dynamite-pack_3: -937691805
-      dynamite-pack_4: 316245118
-      dynamite-pack_5: -150903827
-      dynamite-pack_6: -1440568947
-      dynamite-pack_7: 305754497
-      dynamite-pack_8: -50081049
+      zombi-bk-anim_0: 1619713116
+      zombi-bk-anim_1: 1489638465
+      zombi-bk-anim_2: -887270229
+      zombi-bk-anim_3: 2037333122
+      zombi-bk-anim_4: 1752602159
+      zombi-bk-anim_5: 1818332177
+      zombi-bk-anim_6: 845076182
+      zombi-bk-anim_7: -837297688
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

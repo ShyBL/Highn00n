@@ -16,22 +16,13 @@ public class CharacterMovement : MonoBehaviour
         dir = Vector2.zero;
 
         if (Input.GetKey(KeyCode.A))
-        {
             dir.x = -1;
-        }
         else if (Input.GetKey(KeyCode.D))
-        {
             dir.x = 1;
-        }
-
         if (Input.GetKey(KeyCode.W))
-        {
             dir.y = 1;
-        }
         else if (Input.GetKey(KeyCode.S))
-        {
             dir.y = -1;
-        }
 
         dir.Normalize();
         rb.velocity = speed * dir;
