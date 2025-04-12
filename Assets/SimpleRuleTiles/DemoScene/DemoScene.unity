@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -278,7 +277,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 18
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -288,7 +287,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 19
+      m_TileSpriteIndex: 20
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -368,7 +367,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 20
+      m_TileSpriteIndex: 23
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -378,7 +377,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 13
+      m_TileSpriteIndex: 24
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -468,7 +467,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 23
+      m_TileSpriteIndex: 18
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -478,7 +477,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 24
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -660,7 +659,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1960347807, guid: 85893a29b9939374faeb4903d966a589, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -1176300094, guid: 85893a29b9939374faeb4903d966a589, type: 3}
+    m_Data: {fileID: -256437696, guid: 85893a29b9939374faeb4903d966a589, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 621791385, guid: 85893a29b9939374faeb4903d966a589, type: 3}
   - m_RefCount: 1
@@ -670,19 +669,19 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -2095808464, guid: 85893a29b9939374faeb4903d966a589, type: 3}
   - m_RefCount: 1
+    m_Data: {fileID: 1589209162, guid: 85893a29b9939374faeb4903d966a589, type: 3}
+  - m_RefCount: 1
     m_Data: {fileID: 1759062274, guid: 85893a29b9939374faeb4903d966a589, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 624316565, guid: 85893a29b9939374faeb4903d966a589, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 175720932, guid: 85893a29b9939374faeb4903d966a589, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1020889536, guid: 85893a29b9939374faeb4903d966a589, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1169406595, guid: 85893a29b9939374faeb4903d966a589, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1589209162, guid: 85893a29b9939374faeb4903d966a589, type: 3}
+    m_Data: {fileID: 175720932, guid: 85893a29b9939374faeb4903d966a589, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -256437696, guid: 85893a29b9939374faeb4903d966a589, type: 3}
+    m_Data: {fileID: -1176300094, guid: 85893a29b9939374faeb4903d966a589, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1069940154, guid: 85893a29b9939374faeb4903d966a589, type: 3}
   m_TileMatrixArray:
@@ -769,7 +768,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -8, y: -6, z: 0}
-  m_Size: {x: 24, y: 10, z: 1}
+  m_Size: {x: 36, y: 12, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -1615,12 +1614,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
