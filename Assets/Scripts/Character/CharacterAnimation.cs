@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class CharacterAnimation : MonoBehaviour
 {
-    private static readonly int Direction = Animator.StringToHash("Direction");
-    private static readonly int IsMoving = Animator.StringToHash("IsMoving");
     private Animator _animator;
     private CharacterMovement _characterMovement;
 
@@ -17,26 +15,27 @@ public class CharacterAnimation : MonoBehaviour
     {
         if (_characterMovement.dir.magnitude > 0)
         {
-            _animator.SetBool(IsMoving, true);
+            _animator.SetBool("IsMoving", true);
 
-            switch (_characterMovement.dir.y)
-            {
-                case > 0:
-                    _animator.SetInteger(Direction, 1);
-                    break;
-                case < 0:
-                    _animator.SetInteger(Direction, 0);
-                    break;
-            }
+            _animator.SetFloat("LastInputX", _characterMovement.dir.x);
+            _animator.SetFloat("LastInputY", _characterMovement.dir.y);
         }
         else
         {
-            _animator.SetBool(IsMoving, false);
+            _animator.SetBool("IsMoving", false);
+            _animator.SetFloat("LastInputX", _characterMovement.dir.x);
+            _animator.SetFloat("LastInputY", _characterMovement.dir.y);
         }
     }
     
-    public int GetFacingDirection()
+    
+    public int GetLastInputX()
     {
-        return _animator.GetInteger(Direction);
+        return _animator.GetInteger("LastInputX");
+    }
+    
+    public int GetLastInputY()
+    {
+        return _animator.GetInteger("LastInputY");
     }
 }
