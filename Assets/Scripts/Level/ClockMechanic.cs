@@ -5,21 +5,42 @@ public class ClockMechanic : MonoBehaviour
 {
     public float timeLimit = 12f; // 12 seconds per countdown
     public UnityEvent onClockStrikeHighNoon; // Event for zombie spawn
-    public UnityEvent onTimeLimitReached; // Event for exit phase
     private float timer;
     private bool highNoonTriggered = false;
 
-    void Start()
+    [SerializeField] private bool hasBombPlanted = false;
+    public UnityEvent onBombPlanted;
+    
+    // Called when a bomb is planted on this clock tower
+    public void OnBombPlanted()
     {
-        timer = timeLimit; // Initialize the timer
+        hasBombPlanted = true;
+        onBombPlanted?.Invoke();
+        
+        // You could trigger effects, animations, or countdown here
+    }
+    
+    public bool HasBombPlanted()
+    {
+        return hasBombPlanted;
     }
 
-    void Update()
+
+    private void Start()
     {
-        // Countdown logic
+        timer = timeLimit;
+    }
+
+    private void Update()
+    {
         timer -= Time.deltaTime;
 
-        if (timer <= 0f && !highNoonTriggered)
+        TriggerZombieSpawn();
+    }
+
+    private void TriggerZombieSpawn()
+    {
+        if (timer <= 0f && !highNoonTriggered && !hasBombPlanted)
         {
             // Trigger High Noon event (zombie summoning)
             highNoonTriggered = true;
@@ -29,17 +50,5 @@ public class ClockMechanic : MonoBehaviour
             timer = timeLimit;
             highNoonTriggered = false;
         }
-    }
-
-    public void TriggerExitPhase()
-    {
-        // Trigger exit phase (after clock towers are destroyed)
-        onTimeLimitReached.Invoke();
-    }
-
-    // For debugging purposes, show the timer in the console
-    void OnGUI()
-    {
-        GUI.Label(new Rect(10, 10, 200, 20), "Time Left: " + Mathf.Ceil(timer) + " seconds");
     }
 }

@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7098613211195268431}
   - component: {fileID: 870502666461758211}
-  - component: {fileID: 129227653218003307}
   - component: {fileID: 4177901121832913692}
   m_Layer: 0
-  m_Name: power-up
+  m_Name: Powerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e9dd36c7a4f009e4aa7cf84e15e6e120, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7991e61fa9c75e04694d58e24d0c9728, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,18 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &129227653218003307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3437376719327366823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a84f9c29654487a86b94a53c49bd658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &4177901121832913692
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -5,21 +5,21 @@ public class CharacterAnimation : MonoBehaviour
     private static readonly int Direction = Animator.StringToHash("Direction");
     private static readonly int IsMoving = Animator.StringToHash("IsMoving");
     private Animator _animator;
-    private CharacterMovement _characterMovement;
+    private FloatingGunAim _floatingGunAim;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _characterMovement = GetComponent<CharacterMovement>();
+        _floatingGunAim = GetComponent<FloatingGunAim>();
     }
 
     private void Update()
     {
-        if (_characterMovement.dir.magnitude > 0)
+        if (_floatingGunAim.AimDirection.magnitude > 0)
         {
             _animator.SetBool(IsMoving, true);
 
-            switch (_characterMovement.dir.y)
+            switch (_floatingGunAim.AimDirection.y)
             {
                 case > 0:
                     _animator.SetInteger(Direction, 1);

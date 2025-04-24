@@ -4,13 +4,15 @@ using System.Collections.Generic;
 public class CharacterRangeAttack : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private List<Transform> firePoints; // A list of fire points for each direction
     [SerializeField] private float bulletSpeed = 10f;
     
     private CharacterAnimation _characterAnimation;
+    private FloatingGunAim _floatingGunAim;
+    
     private void Start()
     {
         _characterAnimation = GetComponent<CharacterAnimation>();
+        _floatingGunAim = GetComponent<FloatingGunAim>();
     }
 
     private void Update()
@@ -23,22 +25,13 @@ public class CharacterRangeAttack : MonoBehaviour
 
     private void Shoot()
     {
-        int direction = _characterAnimation.GetFacingDirection();
+        var gunTransform = _floatingGunAim.GunTransform;
+        var direction = _floatingGunAim.AimDirection;
         
-        // Ensure direction is within bounds
-        if (direction >= 0 && direction < firePoints.Count)
+        var bullet = Instantiate(bulletPrefab, gunTransform.position, gunTransform.rotation);
+        if (bullet.TryGetComponent(out Rigidbody2D rb))
         {
-            Transform selectedFirePoint = firePoints[direction]; // Get the fire point based on direction
-            var thing = Instantiate(bulletPrefab, selectedFirePoint.position, selectedFirePoint.rotation);
-            if (thing.TryGetComponent(out Rigidbody2D rb))
-            {
-                rb.velocity = selectedFirePoint.right * bulletSpeed;
-            }
-            
-        }
-        else
-        {
-            Debug.LogWarning("Invalid direction for firing!");
+            rb.velocity = direction * bulletSpeed;
         }
     }
 }
