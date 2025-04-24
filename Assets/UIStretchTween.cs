@@ -7,25 +7,18 @@ using UnityEngine.Events;
 
 public class UIStretchTween : MonoBehaviour
 {
-    [Header("Object that follows the mouse")]
-    [SerializeField] private Transform followObject;
-    [SerializeField] private float followDelay = 0.1f;
-    [SerializeField] private TextMeshProUGUI tmpText;
      
     [Header("Tween Settings")]
     [SerializeField] private Ease firstTweenEase = Ease.OutQuad; 
     [SerializeField] private Ease secondTweenEase = Ease.InOutExpo; 
     [SerializeField] private float firstTweenDelay = 0.5f; 
     [SerializeField] private float secondTweenDelay = 1f;
+    [SerializeField] private RectTransform UI_To_Tween;
+    [SerializeField] private TextMeshProUGUI tmpText;
 
     public UnityEvent OnFinish;
     private bool canStartSecondSequence = false;
-    private bool secondSequenceComplete = false;
-    private RectTransform rectTransform;
-    private void Awake()
-    {
-        rectTransform = GetComponent<RectTransform>();
-    }
+    private bool secondSequenceComplete = false; 
 
     private void Start()
     {
@@ -54,10 +47,10 @@ public class UIStretchTween : MonoBehaviour
         Sequence seq = DOTween.Sequence();
 
         
-        seq.Append(rectTransform.DOScaleY(0.14f, 1f).SetEase(firstTweenEase)).
+        seq.Append(UI_To_Tween.DOScaleY(0.14f, 1f).SetEase(firstTweenEase)).
             OnUpdate(() =>
             {
-                if (rectTransform.localScale.y <= 0.14f)
+                if (UI_To_Tween.localScale.y <= 0.14f)
                 {
                     DOTween.To(() => tmpText.color, x => tmpText.color = x, new Color(tmpText.color.r, tmpText.color.g, tmpText.color.b, 1f), 1f);
                 }
@@ -72,32 +65,14 @@ public class UIStretchTween : MonoBehaviour
 
         Sequence seq = DOTween.Sequence();
 
-        seq.Append(rectTransform.DOScaleY(0f, 1.5f).SetEase(secondTweenEase)
+        seq.Append(UI_To_Tween.DOScaleY(0f, 1.5f).SetEase(secondTweenEase)
             .OnUpdate(() =>
             {
-                if (rectTransform.localScale.y <= 0.05f)
+                if (UI_To_Tween.localScale.y <= 0.05f)
                 {
                     seq.Append(DOTween.To(() => tmpText.color, x => tmpText.color = x, new Color(tmpText.color.r, tmpText.color.g, tmpText.color.b, 0f), 1f));                }
             }));
 
         seq.OnComplete(() => { secondSequenceComplete = true; });
-    }
-
-    private void FollowMouseWithDelay()
-    {
-        // Get current mouse position
-        Vector3 mousePos = Input.mousePosition;
-
-        // Limit offset size to prevent excessive movement
-        float offsetMultiplier = 0.2f; // Adjust this value to control how much it lags behind
-
-        Vector3 targetPos = new Vector3(
-            Mathf.Lerp(followObject.position.x, mousePos.x, followDelay * offsetMultiplier * Time.deltaTime),
-            Mathf.Lerp(followObject.position.y, mousePos.y, followDelay * offsetMultiplier * Time.deltaTime),
-            followObject.position.z // Keep Z unchanged
-        );
-
-        // Apply calculated position
-        followObject.position = targetPos;
     }
 }
