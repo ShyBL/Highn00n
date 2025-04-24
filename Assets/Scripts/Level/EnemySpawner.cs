@@ -9,3 +9,4 @@ public class EnemySpawner : MonoBehaviour
         Instantiate(zombiePrefab, transform.position, Quaternion.identity);
     }
 }
+
