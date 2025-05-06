@@ -13,7 +13,7 @@ public class BombPlanting : MonoBehaviour
     public UnityEvent onBombPlant;
     
     private bool hasBomb = false;
-    private List<ClockMechanic> allClockTowers = new List<ClockMechanic>();
+    public List<ClockMechanic> allClockTowers = new List<ClockMechanic>();
     private ClockMechanic activeClockTower = null;
 
     private void Awake()
