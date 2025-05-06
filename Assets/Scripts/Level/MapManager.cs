@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class MapManager : MonoBehaviour
 {
-    public int currentLevel = 1;
     [SerializeField] private Tilemap referenceTilemap;
     [SerializeField] private LevelScalingConfig levelConfig;
+    [SerializeField] private int currentLevel = 1;
     [SerializeField] private float minDistanceBetweenObjects = 2f;
     
     [Header("Placeable Objects")]
@@ -31,7 +31,7 @@ public class MapManager : MonoBehaviour
 
     private void InitializeObjectPlacer()
     {
-        objectPlacer = new TilemapRandomPlacer(
+        objectPlacer = new ZoneBasedPlacer(
             referenceTilemap, 
             mapSize, 
             occupiedPositions, 
@@ -42,19 +42,31 @@ public class MapManager : MonoBehaviour
     private void PlaceAllObjects()
     {
         int totalObjectsPlaced = 0;
+        Dictionary<PlacementZone, int> zoneStats = new Dictionary<PlacementZone, int>();
         
         foreach (var objectConfig in placeableObjects)
         {
             int quantity = objectConfig.GetQuantity(currentLevel, levelConfig);
+            PlacementZone zone = objectConfig.Zone;
+            
+            // Track statistics by zone
+            if (!zoneStats.ContainsKey(zone))
+                zoneStats[zone] = 0;
             
             for (int i = 0; i < quantity; i++)
             {
-                objectPlacer.PlaceObject(objectConfig.Prefab, objectContainer);
+                objectPlacer.PlaceObject(objectConfig.Prefab, zone, objectContainer);
                 totalObjectsPlaced++;
+                zoneStats[zone]++;
             }
         }
         
+        // Log placement results with zone details
         Debug.Log($"Level {currentLevel}: Placed {totalObjectsPlaced} objects in total");
+        foreach (var zoneStat in zoneStats)
+        {
+            Debug.Log($"- {zoneStat.Key}: {zoneStat.Value} objects");
+        }
     }
 
     private void CreateObjectContainer()

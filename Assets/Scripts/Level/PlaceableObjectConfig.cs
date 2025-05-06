@@ -7,8 +7,11 @@ public class PlaceableObjectConfig
     [SerializeField] private GameObject prefab;
     [SerializeField] private PlacementQuantityType quantityType;
     [SerializeField] private int fixedQuantity = 1;
+    [SerializeField] private PlacementZone placementZone = PlacementZone.Anywhere;
 
     public GameObject Prefab => prefab;
+    public PlacementZone Zone => placementZone;
+
     
     public int GetQuantity(int level, LevelScalingConfig scalingConfig)
     {
