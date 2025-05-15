@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6961824785310138356}
   - component: {fileID: 4790266611730167968}
   - component: {fileID: 1879123530233878235}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 'Zombie Art '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7516713228732153464}
   - component: {fileID: 7082247807968188066}
-  m_Layer: 20
+  m_Layer: 3
   m_Name: Gravestone Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,8 @@ GameObject:
   - component: {fileID: 8719068005286297503}
   - component: {fileID: 2884575499009693716}
   - component: {fileID: 3681387164138774388}
-  m_Layer: 0
+  - component: {fileID: 1315852441203034177}
+  m_Layer: 3
   m_Name: zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +375,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &3681387164138774388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -420,3 +421,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!70 &1315852441203034177
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7557038045285043112}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0

@@ -2,41 +2,41 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ClockMechanic : MonoBehaviour
+public class ClockMechanic : MonoBehaviour 
 {
     public float timeLimit = 12f; // 12 seconds per countdown
     public UnityEvent onClockStrikeHighNoon; // Event for zombie spawn
-    public UnityEvent onBombPlanted;
     private float timer;
     private bool highNoonTriggered = false;
     public bool hasBombPlanted = false;
     
     private void Awake()
     {
-        FindFirstObjectByType<BombPlanting>().onBombPlant.AddListener(OnBombPlanted);
+        var bombPlanting = FindFirstObjectByType<BombPlanting>();
+        bombPlanting.onBombPlant.AddListener(OnBombPlantedAt);
+        bombPlanting.allClockTowers.Add(this);
     }
-
-    // Called when a bomb is planted on this clock tower
-    private void OnBombPlanted()
+    
+    private void OnBombPlantedAt(ClockMechanic clockTower)
     {
-        hasBombPlanted = true;
-        onBombPlanted?.Invoke();
-        
-        // You could trigger effects, animations, or countdown here
+        if (clockTower == this)
+        {
+            hasBombPlanted = true;
+        }
     }
     
     private void Start()
     {
         timer = timeLimit;
     }
-
+    
     private void Update()
     {
         timer -= Time.deltaTime;
-
+        
         TriggerZombieSpawn();
     }
-
+    
     private void TriggerZombieSpawn()
     {
         if (timer <= 0f && !highNoonTriggered && !hasBombPlanted)
@@ -44,7 +44,7 @@ public class ClockMechanic : MonoBehaviour
             // Trigger High Noon event (zombie summoning)
             highNoonTriggered = true;
             onClockStrikeHighNoon.Invoke();
-
+            
             // Restart timer for next cycle
             timer = timeLimit;
             highNoonTriggered = false;
