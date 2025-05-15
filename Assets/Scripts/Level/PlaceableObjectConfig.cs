@@ -7,11 +7,10 @@ public class PlaceableObjectConfig
     [SerializeField] private GameObject prefab;
     [SerializeField] private PlacementQuantityType quantityType;
     [SerializeField] private int fixedQuantity = 1;
-    [SerializeField] private PlacementZone placementZone = PlacementZone.Anywhere;
+    [SerializeField] private ColliderBoundary placementBoundary = new ColliderBoundary();
 
     public GameObject Prefab => prefab;
-    public PlacementZone Zone => placementZone;
-
+    public ColliderBoundary Boundary => placementBoundary;
     
     public int GetQuantity(int level, LevelScalingConfig scalingConfig)
     {

@@ -2,7 +2,7 @@
 using UnityEngine.Tilemaps;
 using System.Collections.Generic;
 
-public class MapManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Tilemap referenceTilemap;
     [SerializeField] private LevelScalingConfig levelConfig;
@@ -12,10 +12,14 @@ public class MapManager : MonoBehaviour
     [Header("Placeable Objects")]
     [SerializeField] private List<PlaceableObjectConfig> placeableObjects = new();
     
+    [Header("Default Placement Area")]
+    [SerializeField] private Collider2D defaultPlacementArea;
+    
     private Vector2 mapSize;
     private List<Vector3> occupiedPositions = new();
     private Transform objectContainer;
     private IObjectPlacer objectPlacer;
+    private ColliderBoundary defaultBoundary = new ColliderBoundary();
 
     private void Awake()
     {
@@ -31,41 +35,53 @@ public class MapManager : MonoBehaviour
 
     private void InitializeObjectPlacer()
     {
-        objectPlacer = new ZoneBasedPlacer(
+        objectPlacer = new ColliderBasedPlacer(
             referenceTilemap, 
             mapSize, 
             occupiedPositions, 
             minDistanceBetweenObjects
         );
+        
+        // Set up default boundary
+        var boundaryField = defaultBoundary.GetType().GetField("boundaryCollider", 
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        if (boundaryField != null)
+        {
+            boundaryField.SetValue(defaultBoundary, defaultPlacementArea);
+        }
     }
     
     private void PlaceAllObjects()
     {
         int totalObjectsPlaced = 0;
-        Dictionary<PlacementZone, int> zoneStats = new Dictionary<PlacementZone, int>();
+        Dictionary<string, int> objectStats = new Dictionary<string, int>();
         
         foreach (var objectConfig in placeableObjects)
         {
             int quantity = objectConfig.GetQuantity(currentLevel, levelConfig);
-            PlacementZone zone = objectConfig.Zone;
+            string objectName = objectConfig.Prefab?.name ?? "Unknown";
             
-            // Track statistics by zone
-            if (!zoneStats.ContainsKey(zone))
-                zoneStats[zone] = 0;
+            // Track statistics by object type
+            if (!objectStats.ContainsKey(objectName))
+                objectStats[objectName] = 0;
+            
+            // Use either the object's specific boundary or the default boundary
+            IPlacementBoundary boundary = objectConfig.Boundary.BoundaryCollider != null ? 
+                                         objectConfig.Boundary : defaultBoundary;
             
             for (int i = 0; i < quantity; i++)
             {
-                objectPlacer.PlaceObject(objectConfig.Prefab, zone, objectContainer);
+                objectPlacer.PlaceObject(objectConfig.Prefab, boundary, objectContainer);
                 totalObjectsPlaced++;
-                zoneStats[zone]++;
+                objectStats[objectName]++;
             }
         }
         
-        // Log placement results with zone details
+        // Log placement results with object details
         Debug.Log($"Level {currentLevel}: Placed {totalObjectsPlaced} objects in total");
-        foreach (var zoneStat in zoneStats)
+        foreach (var stat in objectStats)
         {
-            Debug.Log($"- {zoneStat.Key}: {zoneStat.Value} objects");
+            Debug.Log($"- {stat.Key}: {stat.Value} objects");
         }
     }
 
