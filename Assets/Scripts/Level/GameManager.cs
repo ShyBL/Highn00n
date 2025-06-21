@@ -114,6 +114,19 @@ public class GameManager : MonoBehaviour
             levelManager.OnLevelCompleted -= OnLevelCompleted;
             levelManager.OnLevelProgressChanged -= OnLevelProgressChanged;
         }
+
+        // Remove UI button listeners if needed
+        if (pauseButton != null)
+            pauseButton.onClick.RemoveListener(PauseGame);
+
+        if (restartLevelButton != null)
+            restartLevelButton.onClick.RemoveListener(RestartCurrentLevel);
+
+        if (returnToMenuButton != null)
+            returnToMenuButton.onClick.RemoveListener(ReturnToMainMenu);
+
+        if (resumeButton != null)
+            resumeButton.onClick.RemoveListener(ResumeGame);
     }
 
     private void InitializeGame()
