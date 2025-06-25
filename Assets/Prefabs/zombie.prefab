@@ -244,6 +244,7 @@ MonoBehaviour:
   attackCooldown: 1.5
   damage: 1
   maxHealth: 6
+  reactionTime: 2.91
   graveMarker: {fileID: 4399264329822135741}
   artGameObject: {fileID: 1459811353385995875}
   resurrectionTime: 12
@@ -428,7 +429,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7557038045285043112}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
